@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agamjot Singh Bindra - Terminal Portfolio</title>
   <style>
     body {
@@ -50,7 +50,7 @@
   </style>
 </head>
 <body>
-  <div class="terminal" id="terminal"><div class="line">bindra@portfolio:portfolios$ reset</div><div>command not found: reset</div><div class="line">bindra@portfolio:portfolios$ color green</div><div class="line">bindra@portfolio:portfolios$ color #00ff00</div><div class="line">bindra@portfolio:portfolios$ font monospace</div><div class="line">bindra@portfolio:portfolios$ echo "fuck me diddy"</div><div>"fuck me diddy"</div><div class="line">bindra@portfolio:portfolios$ bye</div><div>command not found: bye</div><div class="line"><span class="prompt">bindra@portfolio:portfolios$ </span><input autofocus=""></div><div class="line">bindra@portfolio:portfolios$ history</div><div>Command History:</div><div>1: ls</div><div>2: cat</div><div>3: cat decodeme</div><div>4: nvim</div><div>5: sudo file.txt</div><div>6: sudo cat science</div><div>7: clear</div><div>8: color</div><div>9: help</div><div>10: help color</div><div>11: color red</div><div>12: color red</div><div>13: </div><div>14: font comic sans</div><div>15: font list</div><div>16: font courier sans</div><div>17: cd</div><div>18: cd ..</div><div>19: cd portfolios</div><div>20: ls</div><div>21: project</div><div>22: projects</div><div>23: projects portfolioweb</div><div>24: exit</div><div>25: clear</div><div>26: reset</div><div>27: color green</div><div>28: color #00ff00</div><div>29: font monospace</div><div>30: echo "fuck me diddy"</div><div>31: bye</div><div>32: history</div><div class="line">bindra@portfolio:portfolios$ apt-get coffee</div><div>command not found: apt-get</div><div class="line">bindra@portfolio:portfolios$ clear-history</div><div>History cleared.</div><div class="line">bindra@portfolio:portfolios$ cd ~</div><div class="line">bindra@portfolio:~$ ls</div><div>zenos  portfolios  science  decodeme  portfolioweb</div><div class="line"><span class="prompt">bindra@portfolio:~$ </span><input autofocus=""></div></div>
+  <div class="terminal" id="terminal"></div>
   <script>
     const terminal = document.getElementById('terminal');
     let promptStr = localStorage.getItem('promptStr') || 'bindra@portfolio:~$';
@@ -200,34 +200,6 @@
         case 'pwd':
           printOutput(currentPath);
           break;
-        case 'exit':
-          printOutput('Exiting terminal...');
-          setTimeout(() => {
-            window.close();
-          }, 1000);
-          break;
-        case "apt-get coffee":
-          printOutput("Installing coffee... Please wait.");
-          setTimeout(() => {
-            printOutput("Coffee installed! Enjoy your brew.");
-          }, 2000);
-          break;
-        case 'clear-history':
-          history = [];
-          historyIndex = 0;
-          localStorage.removeItem('history');
-          printOutput('History cleared.');
-          break;
-        case 'history':
-          if (history.length === 0) {
-            printOutput('No command history available.');
-          } else {
-            printOutput('Command History:');
-            history.forEach((cmd, index) => {
-              printOutput(`${index + 1}: ${cmd}`);
-            });
-          }
-          break;
         default:
           printOutput(`command not found: ${cmd}`);
       }
@@ -267,6 +239,5 @@
 
     bootAnimation();
   </script>
-
-
-</body></html>
+</body>
+</html>
